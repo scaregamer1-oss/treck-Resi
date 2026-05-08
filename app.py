@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.secret_key = 'kunci_rahasia_untuk_flash_message' # Ubah dengan string acak
 
 # --- KONFIGURASI ---
-API_KEY_BINDER = 'API_KEY_ANDA_DI_SINI' # Ganti dengan API Key Anda yang aman
+API_KEY_BINDER = 'adaa0b5c137cce08aa928297268dc724096d004e955e632f5e863aae0d6a13de'
 DB_FILE = '/tmp/database.json'
 
 # --- FUNGSI DATABASE ---
