@@ -4,10 +4,13 @@ import os
 import requests
 
 app = Flask(__name__)
-app.secret_key = 'kunci_rahasia_untuk_flash_message' # Ubah dengan string acak
+app.secret_key = 'kunci_rahasia_untuk_flash_message'
 
 # --- KONFIGURASI ---
+# API Key Binderbyte Anda
 API_KEY_BINDER = 'adaa0b5c137cce08aa928297268dc724096d004e955e632f5e863aae0d6a13de'
+
+# Menggunakan folder /tmp agar Vercel mengizinkan penyimpanan file
 DB_FILE = '/tmp/database.json'
 
 # --- FUNGSI DATABASE ---
@@ -24,7 +27,9 @@ def save_db(data):
 
 # --- FUNGSI TRACKING ---
 def track_resi_binder(kurir, resi, nama_barang="Tanpa Nama"):
-    url = f"[https://api.binderbyte.com/v1/track?api_key=](https://api.binderbyte.com/v1/track?api_key=){API_KEY_BINDER}&courier={kurir.lower()}&awb={resi}"
+    # URL bersih tanpa tambahan kurung siku atau format link yang salah
+    url = f"https://api.binderbyte.com/v1/track?api_key={API_KEY_BINDER}&courier={kurir.lower()}&awb={resi}"
+    
     try:
         response = requests.get(url, timeout=10)
         data = response.json()
