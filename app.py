@@ -8,7 +8,7 @@ app.secret_key = 'kunci_rahasia_untuk_flash_message' # Ubah dengan string acak
 
 # --- KONFIGURASI ---
 API_KEY_BINDER = 'API_KEY_ANDA_DI_SINI' # Ganti dengan API Key Anda yang aman
-DB_FILE = 'database.json'
+DB_FILE = '/tmp/database.json'
 
 # --- FUNGSI DATABASE ---
 def load_db():
